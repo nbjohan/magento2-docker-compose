@@ -52,10 +52,10 @@ You may modify any environment variables depending on your requirements.
 Your Magento source data is persistently stored within Docker data volumes. For local development, we advise copying the entire contents of the `appdata` data volume to your local machine (after setup is complete of course). Since you shouldn't be modifying any of these files, this is just to bring the fully copy of the site back to your host:
 
 ```
-docker cp CONTAINERID:/var/www/html ./
+docker cp CONTAINERID:/var/www/html/app ./html/app
 ```
 
-Then, just uncomment the `./html/app/code:/var/www/html/app/code` and `./html/app/code:/var/www/html/app/code` lines within your docker-compose.yml file (appdata > volumes). This mounts your local `app/code` and `app/design` directories to the Docker data volume. Then, just restart your containers:
+Then, just uncomment the `./html/app:/var/www/html/app` line within your docker-compose.yml file (appdata > volumes). This mounts your local `html/app` directory to the Docker data volume. Then, just restart your containers:
 
 ```
 docker-compose up -d app

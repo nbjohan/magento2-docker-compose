@@ -16,9 +16,8 @@ services:
       image: tianon/true
       volumes:
          - magento_static:/var/www/html
-    #    - ~/.composer:/var/www/.composer
-    #    - ./html/app/code:/var/www/html/app/code
-    #    - ./html/app/design:/var/www/html/app/design
+         #- ~/.composer:/var/www/.composer
+         #- ./html/app:/var/www/html/app
 
     phpfpm:
       image: mageinferno/magento2-php:7.0-fpm-0
